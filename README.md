@@ -2,7 +2,7 @@
 
 ## Methodology
 
-This repository implements the fused lasso approach for structural break detection in panel data models, as developed in our paper. The method provides a robust framework for identifying multiple structural breaks in economic and financial time series.
+This repository implements the fused lasso approach for structural break detection in panel data models, as developed in our paper of Kaddoura and Westerlund (2024). The method provides a robust framework for identifying multiple structural breaks in economic and financial time series.
 
 ### Mathematical Foundation
 
