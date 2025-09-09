@@ -2,7 +2,7 @@
 
 ## Methodology
 
-This repository implements the fused lasso approach for structural break detection in time series, as developed in our paper. The method provides a robust framework for identifying multiple structural breaks in economic and financial time series.
+This repository implements the fused lasso approach for structural break detection in panel data models, as developed in our paper. The method provides a robust framework for identifying multiple structural breaks in economic and financial time series.
 
 ### Mathematical Foundation
 
@@ -10,13 +10,16 @@ The fused lasso estimator solves the following optimization problem:
 
 **Objective Function:**
 
-minimize<sub>β</sub> ½∑<sub>t=1</sub><sup>T</sup> (y<sub>t</sub> - β<sub>t</sub>)² + λ∑<sub>t=2</sub><sup>T</sup> |β<sub>t</sub> - β<sub>t-1</sub>|
+$$\ell_{\gamma}(\mathbb{B}_T) := \frac{1}{N} \sum_{i=1}^N\sum_{t = 1}^T (\tilde{\mathbb{y}}_{i,t} - \tilde{\mathbb{{x}}}_{i,t}'\mathbb{\beta}_t)^2
+    + \gamma \cdot \sum_{t=2}^T w _t\|\mathbb{\beta}_{t}-\mathbb{\beta}_{t-1}\|$$
 
 Where:
-- y<sub>t</sub> is the observed time series at time t
-- β<sub>t</sub> is the estimated level at time t
-- λ is the regularization parameter controlling sparsity in differences
-- T is the total number of observations
+- $y_{it}$ is the observed dependent variable at time t and cross-sectional unit i
+- $x_{it}$ is the observed  regressors at time t and cross-sectional unit i
+- $\beta_t$ is the estimated slope coefficients at time t
+- $w_t$ is an adaptive weight as given in the main paper.
+- $\lambda$ is the regularization parameter controlling sparsity in differences
+- $T$ is the total number of observations
 
 ### Key Features
 
