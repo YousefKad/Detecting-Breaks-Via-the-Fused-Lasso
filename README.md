@@ -14,8 +14,8 @@ $$\ell_{\gamma}(\mathbb{B}_T) := \frac{1}{N} \sum_{i=1}^N\sum_{t = 1}^T (\tilde{
     + \gamma \cdot \sum_{t=2}^T w _t\|\mathbb{\beta}_{t}-\mathbb{\beta}_{t-1}\|$$
 
 Where:
-- $y_{it}$ is the observed dependent variable at time t and cross-sectional unit i
-- $x_{it}$ is the observed  regressors at time t and cross-sectional unit i
+- $\tilde{y}_{it}$ is the observed dependent variable at time t and cross-sectional unit i
+- $\tilde{x}_{it}$ is the observed  regressors at time t and cross-sectional unit i
 - $\beta_t$ is the estimated slope coefficients at time t
 - $w_t$ is an adaptive weight as given in the main paper.
 - $\lambda$ is the regularization parameter controlling sparsity in differences
@@ -25,7 +25,7 @@ Where:
 
 The method offers several advantages:
 
-1. **Multiple Break Detection**: Automatically identifies multiple structural breaks without prior knowledge of their number
-2. **Adaptive Regularization**: Employs data-driven selection of the regularization parameter λ
-3. **Statistical Consistency**: Provides theoretically justified break point estimates
-4. **Computational Efficiency**: Implements optimized algorithms for large-scale time series
+1. **Multiple Break Detection**: Automatically identifies multiple structural breaks without prior knowledge of their number.
+2. **Adaptive Regularization**: Employs data-driven selection of the regularization parameter λ using an IC function.
+3. **Statistical Consistency**: Provides theoretically justified break point estimates.
+4. **Computational Efficiency**: Implements optimized algorithms for large-scale time series.
