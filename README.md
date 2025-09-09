@@ -29,3 +29,7 @@ The method offers several advantages:
 2. **Adaptive Regularization**: Employs data-driven selection of the regularization parameter λ using an IC function.
 3. **Statistical Consistency**: Provides theoretically justified break point estimates.
 4. **Computational Efficiency**: Implements optimized algorithms for large-scale time series.
+
+
+### References
+Y. Kaddoura, J. Westerlund "Estimation of panel data models with random interactive effects and multiple structural breaks when T is fixed" J. Bus. Econom. Statist., 41 (2023), pp. 778-790
