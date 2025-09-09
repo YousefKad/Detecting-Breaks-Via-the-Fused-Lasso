@@ -1,5 +1,28 @@
 Detecting-Breaks-Via-the-Fused-Lasso
 
-This project replicates the code of the Fused Lasso in order to estimate structural breaks in panel data models while allowing for the possibility of interactive effects.
-===
+# 
+
+
+
+\# Detecting Structural Breaks via the Fused Lasso
+
+
+
+\## Methodology
+
+
+
+This repository implements the fused lasso approach for structural break detection in time series, as developed in our paper. The method provides a robust framework for identifying multiple structural breaks in economic and financial time series.
+
+
+
+\### Mathematical Foundation
+
+
+
+The fused lasso estimator solves the following optimization problem:
+
+
+
+\*\*Objective Function:\*\*
 
