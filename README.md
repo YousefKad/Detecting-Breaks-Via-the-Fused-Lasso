@@ -14,6 +14,7 @@ $$\ell_{\gamma}(\mathbb{B}_T) := \frac{1}{N} \sum_{i=1}^N\sum_{t = 1}^T (\tilde{
     + \gamma \cdot \sum_{t=2}^T w _t\|\mathbb{\beta}_{t}-\mathbb{\beta}_{t-1}\|$$
 
 Where:
+- $|\cdot|$ is the frobenious norm
 - $\tilde{y}_{it}$ is the observed dependent variable at time t and cross-sectional unit i
 - $\tilde{x}_{it}$ is the observed  regressors at time t and cross-sectional unit i
 - $\beta_t$ is the estimated slope coefficients at time t
