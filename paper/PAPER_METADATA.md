@@ -10,7 +10,7 @@
 - **Pages:** 778-790
 - **DOI:** 10.1080/07350015.2022.2067546
 
-## Suggested repository description
+## Description
 
 Code companion for the JBES paper on fused-lasso break detection in panel data models with random interactive effects.
 
