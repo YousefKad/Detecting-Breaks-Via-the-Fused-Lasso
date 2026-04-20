@@ -41,8 +41,6 @@ The implementation in this repository combines that logic with an information cr
 ├── environment.yml               # conda environment
 ├── requirements.txt              # pip requirements
 ├── pyproject.toml                # minimal package metadata
-├── CITATION.cff                  # GitHub citation metadata
-└── .gitignore
 ```
 
 ## Main dependencies
@@ -210,19 +208,4 @@ which returns the $n \times n$ lag operator matrix used to construct the lagged 
    - the replication count `sim`,
    - and the break count `m`.
 
-## Suggested citation
 
-If you use this code, please cite the accompanying article:
-
-```bibtex
-@article{KaddouraWesterlund2023,
-  author  = {Kaddoura, Yousef and Westerlund, Joakim},
-  title   = {Estimation of Panel Data Models with Random Interactive Effects and Multiple Structural Breaks when T is Fixed},
-  journal = {Journal of Business \\& Economic Statistics},
-  year    = {2023},
-  volume  = {41},
-  number  = {3},
-  pages   = {778--790},
-  doi     = {10.1080/07350015.2022.2067546}
-}
-```
