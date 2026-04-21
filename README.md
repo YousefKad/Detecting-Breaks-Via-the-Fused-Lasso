@@ -166,14 +166,3 @@ def Lag(n):
 
 which returns the $n \times n$ lag operator matrix used to construct the lagged dependent variable in the dynamic design. Keeping it in a local package makes the main script cleaner and preserves the import style already used in the paper code.
 
-## Notes for users
-
-1. This is research code and is organized around the Monte Carlo design in the paper.
-2. The script is intentionally explicit: many loops are kept visible so that the DGP structure can be inspected directly.
-3. If you want to adapt the code to a different design, the natural entry points are:
-   - the `DATA1`, `DATA2`, and `DATA3` classes,
-   - the penalty grid `lambd_values`,
-   - the replication count `sim`,
-   - and the break count `m`.
-
-
