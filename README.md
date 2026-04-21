@@ -28,38 +28,6 @@ $$
 \lambda \sum_{t=2}^T \lVert \beta_t - \beta_{t-1} \rVert_2 .
 $$
 
-The implementation in this repository combines that logic with an information criterion used to choose the tuning parameter.
-
-## Repository structure
-
-```text
-.
-├── panel_breaks_fused_lasso.py   # main Monte Carlo script
-├── TimeSeriesP/
-│   ├── __init__.py
-│   └── lag.py                    # local helper package containing Lag(n)
-├── environment.yml               # conda environment
-├── requirements.txt              # pip requirements
-├── pyproject.toml                # minimal package metadata
-```
-
-## Main dependencies
-
-The script depends on the following Python packages:
-
-- `numpy`
-- `matplotlib`
-- `cvxpy`
-- `tabulate`
-
-It also imports
-
-```python
-from TimeSeriesP.lag import Lag
-```
-
-where `TimeSeriesP` is a small local package included in this repository.
-
 ## Installation
 
 ### Conda
