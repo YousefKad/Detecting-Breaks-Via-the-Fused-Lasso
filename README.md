@@ -7,7 +7,7 @@ This repository accompanies the article
 > **Journal of Business & Economic Statistics**, 41(3), 778–790.  
 > DOI: [10.1080/07350015.2022.2067546](https://doi.org/10.1080/07350015.2022.2067546)
 
-The code implements a fused-lasso approach to estimating structural breaks in short panels with interactive effects. It is written as a research companion to the paper rather than as a general-purpose software library.
+Simply some code for the above paper. 
 
 ## Overview
 
@@ -42,7 +42,6 @@ conda activate fused-lasso-jbes
 ```bash
 pip install -r requirements.txt
 ```
-
 ## Running the script
 
 The current simulation file is
@@ -55,7 +54,7 @@ The script is written as a self-contained Monte Carlo program. At the bottom of 
 
 ## Parameters in the simulation script
 
-The baseline parameter block in `panel_breaks_fused_lasso.py` is
+The baseline parameters in `panel_breaks_fused_lasso.py` are
 
 ```python
 p   = 4
@@ -80,81 +79,8 @@ phi_1
 pi
 ```
 
-The role of each quantity is:
+Tweek these as needed.
 
-| Parameter | Meaning |
-|---|---|
-| `p` | Number of regressors before the lagged dependent variable is appended in the dynamic design. |
-| `n` | Number of cross-sectional units. |
-| `T` | Number of time periods in the original panel. |
-| `m` | Number of true structural breaks in the data-generating process. |
-| `r` | Number of latent factors in the interactive-effects structure. |
-| `phi` | Persistence parameter in the factor process used in `DATA3`. |
-| `phi_1` | Serial and local cross-sectional dependence parameter used in the idiosyncratic error process in `DATA3`. |
-| `pi` | Persistence / dependence parameter used in the regressor innovation process in `DATA3`. |
-| `lambd_values` | Grid of candidate tuning parameters for the fused-lasso penalty. |
-| `sim` | Number of Monte Carlo replications. |
-
-## Data-generating processes
-
-The script defines three DGP classes.
-
-### `DATA1`
-
-`DATA1` generates panel data without interactive effects. The methods correspond to different break structures:
-
-- `DGP1()` : one break
-- `DGP2()` : two breaks
-- `DGPA()` : break at every date
-- `DGPO()` : no break
-
-### `DATA2`
-
-`DATA2` augments the model with random interactive effects. It returns, among other objects, factor loadings, factors, demeaned outcomes, and demeaned regressors.
-
-### `DATA3`
-
-`DATA3` is the richest design. It allows for
-
-- dynamic dependence through a lagged dependent variable,
-- interactive effects,
-- serially dependent idiosyncratic errors,
-- cross-sectional spillovers in both the error term and regressor innovations.
-
-Because the lagged dependent variable is added to the regressor matrix, the effective regressor dimension becomes `p + 1` inside this design.
-
-## Optimization routines
-
-The class `Optimize` contains three estimation routines:
-
-- `OLS(X, y)`  
-  Date-by-date least-squares benchmark.
-
-- `FGLS(X, y, b_o, Lambda)`  
-  Penalized estimator with fused-lasso type shrinkage across adjacent dates. The penalty is adaptively weighted using a preliminary estimate `b_o`.
-
-- `NBOLS(X, y)`  
-  Pooled no-break least-squares benchmark.
-
-## Tuning-parameter selection
-
-The function `IC(lambd_values, y, X, p, T, n)` loops over the penalty grid and evaluates an information criterion of the form
-
-$$
-IC(\lambda)
-=
-\frac{1}{NT}\sum_{t=1}^T \left\| y_t - X_t \widehat\beta_t(\lambda) \right\|_2^2
-+
-\omega_{NT}\, p\,(\widehat m_\lambda + 1),
-$$
-
-where $\widehat m_\lambda$ is the estimated number of breaks and the script uses
-
-$$
-\omega_{NT} = \frac{\log(NT)}{\sqrt{NT}}.
-$$
-
-The selected tuning parameter is the value of $\lambda$ that minimizes this criterion over the user-specified grid.
 
 ## The local package `TimeSeriesP`
 
